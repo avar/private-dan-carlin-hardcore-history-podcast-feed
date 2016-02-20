@@ -69,8 +69,11 @@ print <<"EOF";
     <itunes:author>Dan Carlin</itunes:author>
     <copyright>dancarlin.com</copyright>
     <itunes:image href="https://raw.githubusercontent.com/avar/private-dan-carlin-hardcore-history-podcast-feed/master/static/DC_HH_iTunes_Gray_180.jpg" />
-    <image><url>https://raw.githubusercontent.com/avar/private-dan-carlin-hardcore-history-podcast-feed/master/static/DC_HH_iTunes_Gray_180.jpg</url>
-    <link>https://github.com/avar/private-dan-carlin-hardcore-history-podcast-feed</link><title>Dan Carlin's Hardcore History Archive</title></image>
+    <image>
+        <url>https://raw.githubusercontent.com/avar/private-dan-carlin-hardcore-history-podcast-feed/master/static/DC_HH_iTunes_Gray_180.jpg</url>
+        <link>https://github.com/avar/private-dan-carlin-hardcore-history-podcast-feed</link>
+        <title>Dan Carlin's Hardcore History Archive</title>
+    </image>
     <itunes:owner>
       <itunes:name>Dan Carlin's Hardcore History</itunes:name>
       <itunes:email>dan\@dancarlin.com </itunes:email>
