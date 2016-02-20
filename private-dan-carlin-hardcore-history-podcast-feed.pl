@@ -30,14 +30,9 @@ Unfortunately there's no way to subscribe to a paid-for feed with all
 the episodes, but if you've bought the old episodes this allows you to
 generate that for yourself and host it on your own server.
 
-=head1 TODO, if I can be bothered
-
-I don't have the show notes, a sensible title for the first 10
-episodes (since I just read the MP3 filename), when the episode was
-published etc.
-
-It works well enough for me in Pocket Casts on as-is, so I'm unlikely
-to patch any of that.
+You probably need to pipe the feed to a file called F<podcast.atom> in
+the C<--url-prefix> directory, because we refer to that as an absolute
+link in the feed itself.
 
 =cut
 
@@ -54,38 +49,40 @@ my @mp3 = glob "$mp3_subdir/*.mp3";
 
 # This whole feed copy/pasted and modified from
 # http://feeds.feedburner.com/dancarlin/history?format=xml
-print <<'EOF';
+print <<"EOF";
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2enclosuresfull.xsl"?>
 <?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Dan Carlin's Hardcore History</title>
+    <title>Dan Carlin's Hardcore History Archive</title>
     <description>Was Alexander the Great as bad a person as Hitler? What was the greatest army of all time? Which U.S. President was the worst? Hardcore History discusses the issues and questions history fans love.</description>
     <itunes:summary>In "Hardcore History" the very unconventional Dan Carlin takes his "Martian", outside-the-box way of thinking and applies it to the past. Was Alexander the Great as bad a person as Adolf Hitler? What would Apaches with modern weapons be like? Will our modern civilization ever fall like civilizations from past eras? This is a difficult-to-classify show that has a rather sharp edge. It's not for everyone. But the innovative style and approach has made "Dan Carlin's Hardcore History" a New Media hit. </itunes:summary>
     <itunes:subtitle>Was Alexander the Great as bad a person as Hitler? What was the greatest army of all time? Which U.S. President was the worst? Hardcore History discusses the issues and questions history fans love.</itunes:subtitle>
-    <link>http://www.dancarlin.com</link>
+    <link>https://github.com/avar/private-dan-carlin-hardcore-history-podcast-feed</link>
     <pubDate>Mon, 29 Dec 2014 22:24:12 PST</pubDate>
     <language>en-us</language>
 
-    <managingEditor>dan@dancarlin.com (Dan Carlin)</managingEditor>
-    <webMaster>dan@dancarlin.com (Dan Carlin)</webMaster>
+    <managingEditor>dan\@dancarlin.com (Dan Carlin)</managingEditor>
+    <webMaster>dan\@dancarlin.com (Dan Carlin)</webMaster>
 
     <itunes:author>Dan Carlin</itunes:author>
     <copyright>dancarlin.com</copyright>
-    <itunes:image href="http://www.dancarlin.com/graphics/DC_HH_iTunes.jpg" />
-    <image><url>http://www.dancarlin.com/graphics/DC_HH_iTunes.jpg</url>
-    <link>http://www.dancarlin.com</link><title>Dan Carlin's Hardcore History</title></image>
+    <itunes:image href="https://raw.githubusercontent.com/avar/private-dan-carlin-hardcore-history-podcast-feed/master/static/DC_HH_iTunes_Gray_180.jpg" />
+    <image><url>https://raw.githubusercontent.com/avar/private-dan-carlin-hardcore-history-podcast-feed/master/static/DC_HH_iTunes_Gray_180.jpg</url>
+    <link>https://github.com/avar/private-dan-carlin-hardcore-history-podcast-feed</link><title>Dan Carlin's Hardcore History Archive</title></image>
     <itunes:owner>
       <itunes:name>Dan Carlin's Hardcore History</itunes:name>
-      <itunes:email>dan@dancarlin.com </itunes:email>
+      <itunes:email>dan\@dancarlin.com </itunes:email>
     </itunes:owner>
     <itunes:keywords>History, Military, War, Ancient, Archaeology, Classics, Carlin</itunes:keywords>
     <itunes:category text="Society &amp; Culture">
       <itunes:category text="History" />
     </itunes:category>
     <itunes:explicit>no</itunes:explicit>
-    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/dancarlin/history" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="dancarlin/history" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" />
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="$url_prefix/podcast.atom" />
+    <feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="dancarlin/history" />
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" />
 EOF
 
 # I could write some fancy scraper for this, but it's not like the
