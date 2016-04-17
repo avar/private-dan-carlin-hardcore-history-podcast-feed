@@ -275,6 +275,9 @@ my %shows = (
     56 => {
         description => 'Often relegated to the role of slavish cannon fodder for Sparta’s spears, the Achaemenid Persian empire had a glorious heritage. Under a single king they created the greatest empire the world had ever seen.',
     },
+    57 => {
+        description => 'From Biblical-era coup conspiracies to the horrific aftermath of ancient combat this second installment of the series on the Kings of Achaemenid Persia goes where only Dan can take it. For better or worse…',
+    },
 );
 
 for my $mp3 (reverse @mp3) {
@@ -285,7 +288,7 @@ for my $mp3 (reverse @mp3) {
     $title =~ s/^\s*|\s*$//g;
     my $num_show = int $show;
     $title ||= $shows{$num_show}->{title};
-    my $description = $shows{$num_show}->{description};
+    my $description = $shows{$num_show}->{description} || die "PANIC: Add a description for $mp3";
 
     my @stat = stat $mp3 or die "PANIC: Can't stat($mp3): $!";
     my $size = $stat[7];
