@@ -278,6 +278,9 @@ my %shows = (
     57 => {
         description => 'From Biblical-era coup conspiracies to the horrific aftermath of ancient combat this second installment of the series on the Kings of Achaemenid Persia goes where only Dan can take it. For better or worse…',
     },
+    58 => {
+        description => 'If this were a movie, the events and cameos would be too numerous and star-studded to mention. It includes Xerxes, Spartans, Immortals, Alexander the Great, scythed chariots, and several of the greatest battles in history.',
+    },
 );
 
 for my $mp3 (reverse @mp3) {
