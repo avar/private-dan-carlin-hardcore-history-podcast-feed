@@ -281,6 +281,9 @@ my %shows = (
     58 => {
         description => 'If this were a movie, the events and cameos would be too numerous and star-studded to mention. It includes Xerxes, Spartans, Immortals, Alexander the Great, scythed chariots, and several of the greatest battles in history.',
     },
+    59 => {
+        description => 'What happens if human beings can’t handle the power of their own weaponry? This show  examines the dangerous early years of the Nuclear Age and humankind’s efforts to avoid self-destruction at the hands of its own creation.'
+    },
 );
 
 for my $mp3 (reverse @mp3) {
