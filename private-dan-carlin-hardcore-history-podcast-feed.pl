@@ -284,6 +284,9 @@ my %shows = (
     59 => {
         description => 'What happens if human beings can’t handle the power of their own weaponry? This show  examines the dangerous early years of the Nuclear Age and humankind’s efforts to avoid self-destruction at the hands of its own creation.'
     },
+    60 => {
+        description => 'Julius Caesar is our travel guide as he takes us through his murderous subjugation of the native Celtic tribal peoples of ancient Gaul. It sounds vaguely like other, recent European colonial conquests...until the natives nearly win.',
+    },
 );
 
 for my $mp3 (reverse @mp3) {
