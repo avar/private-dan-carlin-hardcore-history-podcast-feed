@@ -287,6 +287,12 @@ my %shows = (
     60 => {
         description => 'Julius Caesar is our travel guide as he takes us through his murderous subjugation of the native Celtic tribal peoples of ancient Gaul. It sounds vaguely like other, recent European colonial conquests...until the natives nearly win.',
     },
+    61 => {
+        description => 'Pain is at the root of most drama and entertainment. When does it get too real? This very disturbing and graphic show looks into some case studies and asks some deep questions. WARNING: Very intense subject matter.',
+    },
+    62 => {
+        description => 'The Asia-Pacific War of 1937-1945 has deep roots. It also involves a Japanese society that’s been called one of the most distinctive on Earth. If there were a Japanese version of Captain America, this would be his origin story.',
+    },
 );
 
 for my $mp3 (reverse @mp3) {
